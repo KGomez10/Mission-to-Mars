@@ -79,7 +79,7 @@
     {
      "data": {
       "text/plain": [
-       "<div class=\"content_title\">NASA's Mars Helicopter Attached to Mars 2020 Rover </div>"
+       "<div class=\"content_title\">Heat and Dust Help Launch Martian Water Into Space, Scientists Find</div>"
       ]
      },
      "execution_count": 5,
@@ -100,7 +100,7 @@
     {
      "data": {
       "text/plain": [
-       "\"NASA's Mars Helicopter Attached to Mars 2020 Rover \""
+       "'Heat and Dust Help Launch Martian Water Into Space, Scientists Find'"
       ]
      },
      "execution_count": 6,
@@ -123,7 +123,7 @@
     {
      "data": {
       "text/plain": [
-       "'The helicopter will be first aircraft to perform flight tests on another planet.'"
+       "'Scientists using an instrument aboard NASA’s Mars Atmosphere and Volatile EvolutioN, or MAVEN, spacecraft have discovered that water vapor near the surface of the Red Planet is lofted higher into the atmosphere than anyone expected was possible. '"
       ]
      },
      "execution_count": 7,
@@ -190,7 +190,7 @@
     {
      "data": {
       "text/plain": [
-       "'image/featured/mars3.jpg'"
+       "'image/featured/mars1.jpg'"
       ]
      },
      "execution_count": 11,
@@ -213,7 +213,7 @@
     {
      "data": {
       "text/plain": [
-       "'https://spaceimages-mars.com/image/featured/mars3.jpg'"
+       "'https://spaceimages-mars.com/image/featured/mars1.jpg'"
       ]
      },
      "execution_count": 12,
@@ -414,7 +414,7 @@
     {
      "data": {
       "text/plain": [
-       "<div class=\"content_title\">NASA's New Mars Rover Will Use X-Rays to Hunt Fossils</div>"
+       "<div class=\"content_title\">NASA Invites Students to Name Mars 2020 Rover</div>"
       ]
      },
      "execution_count": 18,
@@ -435,7 +435,7 @@
     {
      "data": {
       "text/plain": [
-       "\"NASA's New Mars Rover Will Use X-Rays to Hunt Fossils\""
+       "'NASA Invites Students to Name Mars 2020 Rover'"
       ]
      },
      "execution_count": 19,
@@ -458,7 +458,7 @@
     {
      "data": {
       "text/plain": [
-       "\"PIXL, an instrument on the end of the Perseverance rover's arm, will search for chemical fingerprints left by ancient microbes.\""
+       "\"Through Nov. 1, K-12 students in the U.S. are encouraged to enter an essay contest to name NASA's next Mars rover.\""
       ]
      },
      "execution_count": 20,
@@ -718,7 +718,7 @@
        "<link href=\"js/fancyBox/jquery.fancybox.css?v=2.1.5\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\"/>\n",
        "<link href=\"js/fancyBox/helpers/jquery.fancybox-thumbs.css?v=1.0.7\" rel=\"stylesheet\" type=\"text/css\"/>\n",
        "<script src=\"js/fancyBox/helpers/jquery.fancybox-thumbs.js?v=1.0.7\" type=\"text/javascript\"></script>\n",
-       "<div class=\"fancybox-overlay fancybox-overlay-fixed\" style=\"width: auto; height: auto; display: block;\"><div class=\"fancybox-wrap fancybox-desktop fancybox-type-image\" style=\"width: 670px; height: 380px; position: absolute; top: 143px; left: 174px; opacity: 0.100036; overflow: hidden;\" tabindex=\"-1\"><div class=\"fancybox-skin\" style=\"padding: 15px; width: auto; height: auto;\"><div class=\"fancybox-outer\"><div class=\"fancybox-inner\" style=\"overflow: visible; width: 640px; height: 350px;\"><img alt=\"\" class=\"fancybox-image\" src=\"image/featured/mars3.jpg\"/></div></div></div></div></div></body></html>"
+       "<div class=\"fancybox-overlay fancybox-overlay-fixed\" style=\"width: auto; height: auto; display: block;\"><div class=\"fancybox-wrap fancybox-desktop fancybox-type-image\" style=\"width: 670px; height: 380px; position: absolute; top: 143px; left: 174px; opacity: 0.100888; overflow: hidden;\" tabindex=\"-1\"><div class=\"fancybox-skin\" style=\"padding: 15px; width: auto; height: auto;\"><div class=\"fancybox-outer\"><div class=\"fancybox-inner\" style=\"overflow: visible; width: 640px; height: 350px;\"><img alt=\"\" class=\"fancybox-image\" src=\"image/featured/mars3.jpg\"/></div></div></div></div></div></body></html>"
       ]
      },
      "execution_count": 23,
@@ -1070,19 +1070,18 @@
     "    .find('div', class_='collapsible results') \\\n",
     "    .find_all('div', 'item')\n",
     "\n",
-    "# Scrape data everytime we visit site\n",
-    "for result in result_list:\n",
-    "    # get link for product and visit page    \n",
+    "# Scrape data everytime we visit on the site\n",
+    "for result in result_list:  \n",
     "    link = result.find('a').get('href')\n",
     "    browser.visit(f\"{url}{link}\")\n",
     "    \n",
-    "    # get the html\n",
+    "    # find the html\n",
     "    hemisphere_soup = soup(browser.html, 'html.parser')\n",
     "    \n",
-    "    # get the image title (only 1 h2 on page)  \n",
+    "    # collect all the image titles (only 1 h2 on page)  \n",
     "    hemisphere_title = hemisphere_soup.find('h2').text\n",
     "    \n",
-    "    # get the image link (seek an anchor link labeled Sample)\n",
+    "    # collect all the image links (seek an anchor link labeled Sample)\n",
     "    hemisphere_url = hemisphere_soup.find('a', string=\"Sample\").get('href')\n",
     "    hemisphere_image_urls.append({\n",
     "        'img_url': f\"{url}{hemisphere_url}\",\n",
@@ -1132,7 +1131,7 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
+   "display_name": "Python 3.7.13 ('PythonData')",
    "language": "python",
    "name": "python3"
   },
